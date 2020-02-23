@@ -22,6 +22,7 @@ static OSMesgQueue sSoundMesgQueue;
 static OSMesg sSoundMesgBuf[1];
 static struct VblankHandler sSoundVblankHandler;
 
+
 static u8 D_8032C6C0 = 0;
 static u8 D_8032C6C4 = 0;
 static u16 sCurrentMusic = MUSIC_NONE;
@@ -71,7 +72,11 @@ static u32 menuSoundsExtra[] = {
 };
 static s8 paintingEjectSoundPlayed = FALSE;
 
-static void play_menu_sounds_extra(int a, void *b);
+void play_menu_sounds_extra(s32 a, void *b) {
+    play_sound(menuSoundsExtra[a], b);
+}
+
+// static void play_menu_sounds_extra(int a, void *b);
 
 void func_80248C10(void) {
     D_8032C6C0 = 0;
@@ -259,9 +264,7 @@ void stop_cap_music(void) {
     }
 }
 
-void play_menu_sounds_extra(s32 a, void *b) {
-    play_sound(menuSoundsExtra[a], b);
-}
+
 
 void audio_game_loop_tick(void) {
     audio_signal_game_loop_tick();

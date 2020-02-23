@@ -177,6 +177,23 @@ extern long long int gspF3DLX2_Rej_xbusDataStart[],gspF3DLX2_Rej_xbusDataEnd[];
 extern long long int gspL3DEX2_xbusTextStart[],    gspL3DEX2_xbusTextEnd[];
 extern long long int gspL3DEX2_xbusDataStart[],    gspL3DEX2_xbusDataEnd[];
 
+/* DECOMP ONLY */
+
+extern u64 rspF3DBootStart[], rspF3DBootEnd[];
+
+// F3D ucode
+extern u64 rspF3DStart[], rspF3DEnd[];
+
+// F3D ucode data
+extern u64 rspF3DDataStart[], rspF3DDataEnd[];
+
+// aspMain (audio) ucode
+extern u64 rspAspMainStart[], rspAspMainEnd[];
+
+// aspMain ucode data
+extern u64 rspAspMainDataStart[], rspAspMainDataEnd[];
+
+
 /**************************************************************************
  *
  * Function prototypes

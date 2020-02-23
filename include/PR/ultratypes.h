@@ -57,18 +57,19 @@ typedef volatile long long		vs64;	/* signed 64-bit */
 typedef float				f32;	/* single prec floating point */
 typedef double				f64;	/* double prec floating point */
 
-#if !defined(_SIZE_T) && !defined(_SIZE_T_) && !defined(_SIZE_T_DEF)
-#define _SIZE_T
-#define _SIZE_T_DEF			/* exeGCC size_t define label */
-#if (_MIPS_SZLONG == 32)
-typedef unsigned int    size_t;
-#endif
-#if (_MIPS_SZLONG == 64)
-typedef unsigned long   size_t;
-#endif
-#endif
 
 #endif  /* _LANGUAGE_C */
+
+#ifdef TARGET_N64
+typedef u32 size_t;
+typedef s32 ssize_t;
+typedef u32 uintptr_t;
+typedef s32 intptr_t;
+typedef s32 ptrdiff_t;
+#else
+#include <stddef.h>
+#endif
+
 
 
 /*************************************************************************

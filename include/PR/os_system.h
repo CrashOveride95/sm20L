@@ -60,6 +60,10 @@ extern "C" {
 #define	OS_TV_NTSC		1
 #define	OS_TV_MPAL		2
 
+#define TV_TYPE_NTSC 1
+#define TV_TYPE_PAL 0
+#define TV_TYPE_MPAL 2
+
 /*
  * Size of buffer the retains contents after NMI
  */
